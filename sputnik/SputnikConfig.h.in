@@ -1,0 +1,2 @@
+#define Sputnik_VERSION_MAJOR @Sputnik_VERSION_MAJOR@
+#define Sputnik_VERSION_MINOR @Sputnik_VERSION_MAJOR@

@@ -1,0 +1,6 @@
+cuSPARSE/matrix/*
+cuSPARSE/*.txt
+cuSPARSE/tar
+cuSPARSE/matrix.tar.gz
+*/.idea
+*/cmake-build-debug
