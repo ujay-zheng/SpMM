@@ -31,12 +31,11 @@ def block_random_mask(row, col, sparsity, block_row, block_col):
 
 
 def generate_guide(matrix_dir, guide_path):
-    for root, dirs, files in os.walk(matrix_dir, topdown=False):
-        abs_path = os.path.abspath(root)
-        with open(guide_path, "w") as f:
+    with open(guide_path, "w") as f:
+        for root, dirs, files in os.walk(matrix_dir, topdown=True):
+            abs_path = os.path.abspath(root)
             for file in files:
                 f.write(abs_path+"/"+file+"\n")
-        break
 
 
 def mask_pipeline(path, out_path, guide_file, br_range, bc_range, sparsity_range):

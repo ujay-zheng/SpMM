@@ -150,7 +150,10 @@ inline void evaluator(std::string guide_file, std::string out_file){
         if(!source.is_open())
             throw "open source file error!";
         source >> A_num_rows >> A_num_cols >> B_num_cols >> br >> bc >> sparsity;
-        if(br!=bc) continue;
+        if(br!=bc) {
+            source.close();
+            continue;
+        }
         A_ell_blocksize = br;
         int total_A = A_num_rows * A_num_cols, total_B = A_num_cols * B_num_cols, total_C = A_num_rows*B_num_cols;
         hA = new T[total_A];
