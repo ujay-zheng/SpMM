@@ -24,12 +24,14 @@ define data_type float --> define data_type __half
 
 ### Docker
 
-In this case, there is no Dockerfile, you just need to pull an nvidia/cuda image newer than 11.4.0. I chose this docker image: nvidia/cuda:11.4.0-devel-ubuntu18.04. You can get the available containers with the following command.
+We highly recommend you use Docker(Nvidia Docker) to build and run the project,after cloning this repo and enter the directory,run
 
 ```
-docker pull nvidia/cuda:11.4.0-devel-ubuntu18.04
-docker run --runtime=nvidia -v {You SpMM repo path}:/SpMM -itd nvidia/cuda:11.4.0-devel-ubuntu18.04
+docker build . -t cusparse-block
+docker run --runtime=nvidia -v {You SpMM repo path}:/SpMM -itd cusparse-block
 ```
+
+You have to make sure that the source data of matrix must be included in you repo path!
 
 ### Quick Start
 
