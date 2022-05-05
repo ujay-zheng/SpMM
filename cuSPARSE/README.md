@@ -7,7 +7,7 @@ You can directly run the code if
 * **Architecture** ≥ NVIDIA AMPERE
 * **Compute capability** ≥ 8.0
 
-You should change [bspmm_latency_evaluator.cpp](https://github.com/ujay-zheng/SpMM/blob/main/cuSPARSE/bspmm_latency_evaluator.cpp#L13)  line 13 and line 14 if
+You should change [bspmm_latency_evaluator.cpp](https://github.com/ujay-zheng/SpMM/blob/main/cuSPARSE/bspmm_latency_evaluator.cpp#L13) at line 13 and line 14 if
 
 * **Architecture** ≥ Volta
 * **Compute capability** ≥ 7.0
@@ -24,7 +24,7 @@ define data_type float --> define data_type __half
 
 ### Docker
 
-We highly recommend you use Docker(Nvidia Docker) to build and run the project,after cloning this repo and enter the directory,run
+We highly recommend you use Docker(Nvidia Docker) to build and run this repo,after cloning this repo and enter the directory,run
 
 ```
 docker build . -t cusparse-block
@@ -35,11 +35,17 @@ You have to make sure that the source data of matrix must be included in you rep
 
 ### Quick Start
 
+##### make a new directory
+
+```shell
+mkdir out
+```
+
 ##### Building
 
 * Linux
 
-```
+```shell
 make
 ```
 
@@ -72,15 +78,13 @@ I'll write a CMakeList.txt someday, but not now. So before I write a CMakelist y
 
 ​	Because the source data of matrix can be in any path on your computer, [bspmm_latency_evaluator](https://github.com/ujay-zheng/SpMM/blob/main/cuSPARSE/bspmm_latency_evaluator) needs to know the path of each file, which is provided by guide.txt. You can get a guide file manually, but by running matrix.py, you just need to provide the path to the folder that contains all the source data, and the path where the generated guide file should go. The program will search all the files in the folder you give file, and write each file path found to the guide file in the specified path line by line.
 
-​	Before run matrix.py, make sure you've install numpy.
-
-```
-python matrix.py {the folder contains the data} {guide file path}
+```shell
+python3 matrix.py your/path/of/matrix out/guide.txt
 ```
 
-* begin test
+##### begin test
 
-```
-./bspmm_latency_evaluator {guide file} {CSV output file}
+```shell
+./bspmm_latency_evaluator out/guide.txt out/cuSPARSE_block.csv
 ```
 
