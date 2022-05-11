@@ -1,10 +1,16 @@
 #include "SputnikConfig.h"
-#include "matirx.h"
 
 #include <iostream>
 
+#include "spmm/spmm_utils.h"
+
 int main(int argc, char *argv[]){
-    DenseMatrix denseMatrix();
-    std::cout << " Version " << Sputnik_VERSION_MAJOR << std::endl;
+    if(argc != 3) {
+        std::cout << "please give a guide file and out path!" << std::endl;
+        return 0;
+    }
+    char *guide = argv[1];
+    char *out_csv = argv[2];
+    pipeline(guide, out_csv);
     return 0;
 }
