@@ -5,3 +5,4 @@ cuSPARSE/matrix.tar.gz
 */.idea
 */cmake-build-debug
 cuSPARSE/bspmm_latency_evaluator
+matrix/*
