@@ -54,6 +54,7 @@ float spmm_timer(CudaSparseMatrix *cuda_sparse_matrix, CudaDenseMatrix *cuda_den
     cudaEventElapsedTime(&elapsedTime, start, stop);
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
+    CHECK_CUDA(cudaFree(output_matrix))
     return elapsedTime;
 }
 
