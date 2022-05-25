@@ -3,8 +3,11 @@ cuSPARSE/*.txt
 cuSPARSE/tar
 cuSPARSE/matrix.tar.gz
 */.idea
+*/*/.idea
 */cmake-build-debug
+*/*/cmake-build-debug
 cuSPARSE/bspmm_latency_evaluator
 matrix/*
 guide.txt
-*/build/*
+*/build
+*/*/build
