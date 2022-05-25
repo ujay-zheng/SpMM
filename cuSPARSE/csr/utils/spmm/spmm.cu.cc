@@ -81,8 +81,8 @@ void cuda_construct_from_mtx(const std::string &mtx, CudaSparseMatrix **cuda_spa
             in >> dense_meta_data[i];
         }
     }else if(layout == CUSPARSE_ORDER_COL){
-        for(int i=0; i<K; i++){
-            for(int j=0; j<N; j++){
+        for(int j=0; j<N; j++){
+            for(int i=0; i<K; i++){
                 in >> dense_meta_data[j*K+i];
             }
         }
