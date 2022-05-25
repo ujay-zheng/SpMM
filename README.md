@@ -21,7 +21,7 @@ You have to make sure that the source data of matrix must be included in you rep
 
 * data format
 
-​	I save the source data for sparse and dense matrices in a multiplication process in a txt file. The first row stores the row number of the sparse matrix, the column number of the sparse matrix and the column number of the dense matrix, then the next row stores br(block row), bc(block column) and sparsity. After that is the source data of the row-major sparse matrix, and finally is the source data of the column-major dense matrix. You have to make sure that a txt file has only these elements!By the way, there is no requirement for the name of the txt file.
+​	I save the source data for sparse and dense matrices in a multiplication process in a txt file. The first row stores the row number of the sparse matrix, the column number of the sparse matrix and the column number of the dense matrix, then the next row stores br(block row), bc(block column) and sparsity. We assume that the mask pattern is block pattern, if you want to use unstructured pattern, just set br=bc=1. After that is the source data of the row-major sparse matrix, and finally is the source data of the column-major dense matrix. You have to make sure that a txt file has only these elements!By the way, there is no requirement for the name of the txt file.
 
 ```
 4 4 4
